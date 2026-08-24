@@ -18,5 +18,33 @@ be found in the on-line JSim documentation set:
 JSim Binaries for MS Windows, Apple OS, and CentOS EL 6/7 can be found at:
  
  http://www.physiome.org/jsim/download/index.html
- 
- 
+
+Modernization and Physiolog collaboration
+-----------------------------------------
+
+This fork is being modernized under a scientific-reproducibility constraint: changes
+must preserve numerical behavior, model semantics, solver behavior, physical units,
+file formats, and historical verification evidence unless a reviewed compatibility
+record demonstrates otherwise. See [MODERNIZATION.md](MODERNIZATION.md) for the
+verified build status, current blockers, compatibility risks, and milestone plan.
+
+The modernization also supports [Physiolog](https://physiolog.org), an open clinical
+physiology textbook, teaching-simulation, and research project. JSim will be used
+alongside HumMod, public Physiome models, browser-based teaching models, and other
+suitable simulation engines for two connected purposes:
+
+1. Build a generative-mechanism research pipeline from physiological questions and
+   teaching models in Physiolog to explicit, reproducible models for *models4PT*.
+2. Develop and cross-validate physiology models for teaching in the Physiolog book
+   and simulations, as well as for research.
+
+JSim contributes a general equation-based execution environment, physical-unit
+checking, parameter estimation and comparison with experimental reference data, and
+CellML/SBML interchange. HumMod contributes an integrative whole-body comparison
+environment, public Physiome models contribute reusable and cited model structures,
+and Physiolog's browser models contribute small, transparent learning experiences.
+No engine is treated as ground truth: model and engine versions, assumptions, units,
+scenarios, solver settings, outputs, and disagreements must be recorded as part of
+the evidence.
+
+
