@@ -4,37 +4,48 @@
 
 . jsbuild.path
 
+build_header() {
+	CLASS=$1
+	if [ -x "$JSIMSDK/bin/javah" ]
+	then
+		"$JSIMSDK/bin/javah" -jni "$CLASS"
+	else
+		SOURCE=`echo "$CLASS" | tr . /`.java
+		"$JSIMSDK/bin/javac" -h "$PWD" -d "$JSIMSRC" "$JSIMSRC/$SOURCE"
+	fi
+}
+
 cd $JSIMSRC/JSim/nonJava
 
 rm -f */JSim_nml_*.h
 
 cd math
-$JSIMSDK/bin/javah -jni JSim.nml.math.NatMath
+build_header JSim.nml.math.NatMath
 cd ..
 
 cd ode1
-$JSIMSDK/bin/javah -jni JSim.nml.ode1.ODE1Solver
+build_header JSim.nml.ode1.ODE1Solver
 cd radau
-$JSIMSDK/bin/javah -jni JSim.nml.ode1.ODE1SolverRadau
+build_header JSim.nml.ode1.ODE1SolverRadau
 cd ../dopri5
-$JSIMSDK/bin/javah -jni JSim.nml.ode1.ODE1SolverDopri5
+build_header JSim.nml.ode1.ODE1SolverDopri5
 cd ../cvode
-$JSIMSDK/bin/javah -jni JSim.nml.ode1.ODE1SolverCVode
+build_header JSim.nml.ode1.ODE1SolverCVode
 cd ../..
 
 cd pde1
-$JSIMSDK/bin/javah -jni JSim.nml.pde1.PDE1Solver
-$JSIMSDK/bin/javah -jni JSim.nml.pde1.PDE1SolverToms731
+build_header JSim.nml.pde1.PDE1Solver
+build_header JSim.nml.pde1.PDE1SolverToms731
 cd ..
 
 cd opt
-$JSIMSDK/bin/javah -jni JSim.nml.opt.Optimizer
+build_header JSim.nml.opt.Optimizer
 cd simplex
-$JSIMSDK/bin/javah -jni JSim.nml.opt.Simplex
+build_header JSim.nml.opt.Simplex
 cd ../ggopt/
-$JSIMSDK/bin/javah -jni JSim.nml.opt.GGopt
+build_header JSim.nml.opt.GGopt
 cd ../nl2sol/
-$JSIMSDK/bin/javah -jni JSim.nml.opt.NL2sol
+build_header JSim.nml.opt.NL2sol
 cd ../..
 
 
