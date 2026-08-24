@@ -76,6 +76,8 @@ The first command passed and produced 11 headers. The second proved the missing-
 
 The build writes `.class` files directly under `SRC2.0/JSim`, regenerates parser/scanner Java sources from `.cup` and `.lex` inputs, creates JNI headers below `SRC2.0/JSim/nonJava`, and creates native objects/libraries under the source tree and `SRC2.0/native/macos`. Parser generators embed timestamps, so regeneration can create nonfunctional diffs. The repository currently ignores only `CVS/`; build-output isolation or precise ignore rules are still needed for reproducible clean builds.
 
+The PDE verification suite previously tracked distinct `Diffusion` and `diffusion` fixture families. Default macOS APFS volumes are case-insensitive, so Git could materialize only one family and reported the other as modified. The exact-solution `diffusion` project and references were renamed to `ExactDiffusion`; their contents and the original `Diffusion` fixtures were preserved byte-for-byte.
+
 ## Known blockers
 
 - Replace hard-coded macOS compiler and Fortran runtime locations with detected or explicitly supplied toolchain values, while preserving compilation and link flags for a reference Intel build.
