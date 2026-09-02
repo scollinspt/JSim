@@ -34,7 +34,9 @@ alongside HumMod, public Physiome models, browser-based teaching models, and oth
 suitable simulation engines for two connected purposes:
 
 1. Build a generative-mechanism research pipeline from physiological questions and
-   teaching models in Physiolog to explicit, reproducible models for *models4PT*.
+   teaching models in Physiolog to explicit, reproducible models for Models4PT and
+   downstream patient-specific reasoning research in the Clinical Inference Engine
+   (CIE).
 2. Develop and cross-validate physiology models for teaching in the Physiolog book
    and simulations, as well as for research.
 
@@ -46,5 +48,10 @@ and Physiolog's browser models contribute small, transparent learning experience
 No engine is treated as ground truth: model and engine versions, assumptions, units,
 scenarios, solver settings, outputs, and disagreements must be recorded as part of
 the evidence.
+
+For work spanning the model ecosystem, open the sibling
+`~/Projects/physiolog-simulations.code-workspace`. It includes Physiolog,
+`hummod-research`, the read-only HumMod distribution, JSim, Models4PT, and CIE while
+keeping their Git, licensing, validation, and deployment boundaries independent.
 
 
