@@ -54,4 +54,14 @@ For work spanning the model ecosystem, open the sibling
 `hummod-research`, the read-only HumMod distribution, JSim, Models4PT, and CIE while
 keeping their Git, licensing, validation, and deployment boundaries independent.
 
+For focused JSim engine modernization, open `jsim-development.code-workspace`
+instead. This keeps build, dependency, solver, format, and compatibility work scoped
+to the JSim repository. Use the multi-root workspace when the work itself crosses
+repository boundaries, such as implementing or comparing physiological models.
+
+The proposed comparison of JSim and HumMod is a new research workflow, not a claim
+that the projects were historically integrated. HumMod remains an independent,
+read-only reference environment; agreement between engines is implementation evidence,
+not physiological validation or proof that either engine is ground truth.
+
 
